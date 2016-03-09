@@ -2,19 +2,15 @@
 <html>
     <head>
         <title>Etch-A-Sketch</title>
-        <script type="text/javascript" src="odin-etch-a-sketch.js" charset="utf-8"></script>
-        <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-        <link type="text/css" rel="stylesheet" href="odin-etch-a-sketch.css"/>
+                <link type="text/css" rel="stylesheet" href="odin-etch-a-sketch.css"/>
+            <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+            <script type="text/javascript" src="odin-etch-a-sketch.js" charset="utf-8"></script>
     </head>
     <body>
-        <nav>
-            <div class="button_options">
-                <button id="new" onclick="user_prompt">New</button>
-                <button id="clear">Clear</button>
-            </div>
-        </nav>
-        <div id="grid_container">
-            
+        <div class="button_options">
+             <button type="button" id="new" onclick="etch_a_sketch()">New</button>
+              <button type="button" id="clear">Clear</button>
         </div>
+     <div id="grid_container"></div>
     </body>
 </html>

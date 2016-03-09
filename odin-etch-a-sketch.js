@@ -1,15 +1,10 @@
-var user_prompt = function() {
-    var input = prompt('Select the size of your sketch pad', 'Small, Medium or Large');
-    etch_a_sketch(input);
-}
-
-var etch_a_sketch = function(option) {
-    $('grid_container').html("");
+var etch_a_sketch = function() {
+    $('#grid_container').html("");
         
+    var input = prompt('Select the size of your sketch pad', 'Small, Medium or Large');
     input.toLowerCase();
     
-    switch(option) {
-            case 'small':
+    if(input === "small") {
             var square_size = $('#grid_container').width()/30;
             for(var i = 1; i <= 32; i++) {
                 for(var k = 1; k <= 32; i++) {
@@ -19,8 +14,8 @@ var etch_a_sketch = function(option) {
             }
             $('.grid_square').css('width', square_size);
             $('.grid_square').css('height', square_size);
-            break;
-        case 'medium':
+    }
+    else if(input === "medium") {
             var square_size = $('#grid_container').width()/62;
             for(var i = 1; i <= 64; i++) {
                 for(var k = 1; k <= 64; i++) {
@@ -30,8 +25,8 @@ var etch_a_sketch = function(option) {
             }
             $('.grid_square').css('width', square_size);
             $('.grid_square').css('height', square_size);
-            break;
-        case 'large':
+    }
+    else if(input === "large") {
             var square_size = $('#grid_container').width()/126;
             for(var i = 1; i <= 128; i++) {
                 for(var k = 1; k <= 128; i++) {
@@ -41,9 +36,9 @@ var etch_a_sketch = function(option) {
             }
             $('.grid_square').css('width', square_size);
             $('.grid_square').css('height', square_size);
-            break;
-        default:
+    }
+    else {
             console.log("You didn't pick a valid option");
-            user_prompt();
+            etch_a_sketch();
     }
 }
